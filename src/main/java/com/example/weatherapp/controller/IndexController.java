@@ -1,4 +1,4 @@
-package com.example.weatherapp;
+package com.example.weatherapp.controller;
 
 
 import org.springframework.stereotype.Controller;

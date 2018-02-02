@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html>
 
 <head>
     <title>Spring Boot ajax example</title>
@@ -8,50 +8,51 @@
     <link rel="stylesheet" type="text/css" href="webjars/bootstrap/3.3.7/css/bootstrap.min.css"/>
 </head>
 <body>
-
+<nav class=" navbar-default navbar-static-top navbar-inverse">
+    <div class="container-fluid">
+        <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li class="dropdown" data-type="temperature">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                       aria-expanded="false">Temperature <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-option" data-id="2643743" href="#">London</a></li>
+                        <li><a class="dropdown-option" data-id="5128638" href="#">New York</a></li>
+                        <li><a class="dropdown-option" data-id="5549222" href="#">Washington</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav">
+                <li class="dropdown" data-type="temperature">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                       aria-expanded="false">Pressure <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-option" data-id="2643743" href="#">London</a></li>
+                        <li><a class="dropdown-option" data-id="5128638" href="#">New York</a></li>
+                        <li><a class="dropdown-option" data-id="5549222" href="#">Washington</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav">
+                <li class="dropdown" data-type="humidity">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                       aria-expanded="false">Humidity <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-option" data-id="2643743" href="#">London</a></li>
+                        <li><a class="dropdown-option" data-id="5128638" href="#">New York</a></li>
+                        <li><a class="dropdown-option" data-id="5549222" href="#">Washington</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
 <div class="container-fluid">
     <div class="starter-template">
-        <nav class=" navbar-default navbar-static-top navbar-inverse">
-            <div class="container-fluid">
-                <div class="collapse navbar-collapse" >
-                    <ul class="nav navbar-nav">
-                        <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
-                        <li><a href="#">Link</a></li>
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="#">Action</a></li>
-                                <li><a href="#">Another action</a></li>
-                                <li><a href="#">Something else here</a></li>
-                                <li role="separator" class="divider"></li>
-                                <li><a href="#">Separated link</a></li>
-                                <li role="separator" class="divider"></li>
-                                <li><a href="#">One more separated link</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-        <div id="feedback"></div>
-
-        <form class="form-horizontal" id="search-form">
-            <div class="form-group form-group-lg">
-                <label class="col-sm-2 control-label">Username</label>
-                <div class="col-sm-10">
-                    <input type="text" class="form-control" id="username"/>
-                </div>
-            </div>
-
-            <div class="form-group">
-                <div class="col-sm-offset-2 col-sm-10">
-                    <button type="submit" id="bth-search"
-                            class="btn btn-primary btn-lg">Search
-                    </button>
-                </div>
-            </div>
-        </form>
-
+        <div id="feedback"  class="alert alert-danger" style="display:none;" role="alert"></div>
+        <div class="container-fluid">
+            <canvas id="canvas"></canvas>
+        </div>
     </div>
 
 </div>
@@ -61,7 +62,11 @@
 </div>
 
 <script type="text/javascript" src="webjars/jquery/2.2.4/jquery.min.js"></script>
+<script type="text/javascript" src="webjars/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/utils.js"></script>
+<script type="text/javascript" src="js/Chart.bundle.js"></script>
+<script type="text/javascript" src="js/moment.js"></script>
+<script type="text/javascript" src="js/chartjs-plugin-zoom.min.js"></script>
 <script type="text/javascript" src="js/main.js"></script>
-
 </body>
 </html>
